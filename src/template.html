@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} - DevFest Kigali</title>
+  <meta name="view-transition" content="same-origin">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <a href="index.html" class="logo" aria-label="Home">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="nav-links">
+          <a href="#" class="active">Docs</a>
+        </div>
+      </div>
+      <div class="navbar-center">
+        <div class="search-bar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Search..." id="search-input">
+          <span class="shortcut">/</span>
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <button class="ask-ai-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          Ask AI
+        </button>
+      </div>
+      <div class="navbar-right">
+        <!-- Removed Community and Log in links -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="1"></circle>
+            <circle cx="19" cy="12" r="1"></circle>
+            <circle cx="5" cy="12" r="1"></circle>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          {{sidebar}}
+        </nav>
+      </aside>
+
+      <!-- Content -->
+      <main class="content-wrapper">
+        <div class="content">
+          <div class="breadcrumbs">
+            <span>Docs</span>
+            <span class="separator">/</span>
+            <span>{{group}}</span>
+          </div>
+          
+          <div class="markdown-body">
+            {{content}}
+          </div>
+
+          <div class="page-actions">
+            <div class="action-group">
+              <button class="action-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                Ask a question
+              </button>
+              <span class="divider">|</span>
+              <button class="action-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                Copy page
+              </button>
+              <span class="divider">|</span>
+              <button class="action-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                View as Markdown
+              </button>
+            </div>
+          </div>
+
+          <div class="footer-nav">
+            {{footerNav}}
+          </div>
+        </div>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside class="toc-sidebar">
+          <div class="toc-container">
+            <h3>On this page</h3>
+            <ul class="toc-list">
+              {{toc}}
+            </ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </div>
+  <!-- Floating AI Assistant -->
+  <button id="ai-fab" class="ai-fab" title="Ask AI Assistant">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+  </button>
+
+  <div id="ai-chat-window" class="ai-chat-window">
+    <div class="ai-chat-header">
+      <span>AI Assistant</span>
+      <button id="ai-chat-close" class="ai-chat-close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div id="ai-chat-body" class="ai-chat-body">
+      <!-- Messages -->
+    </div>
+    <div class="ai-chat-input-area">
+      <textarea id="ai-chat-input" class="ai-chat-input" placeholder="Ask about this page..."></textarea>
+      <button id="ai-chat-send" class="ai-chat-send">Send</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="ai-assistant.js"></script>
+  <script src="search.js"></script>
+  <script src="mobile-menu.js"></script>
+  <script src="demos.js"></script>
+  <script>
+    hljs.highlightAll();
+
+
+    // Copy Button Logic
+    document.querySelectorAll('pre').forEach(pre => {
+      // Create button
+      const button = document.createElement('button');
+      button.className = 'copy-btn';
+      button.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        Copy
+      `;
+
+      // Add click event
+      button.addEventListener('click', () => {
+        const code = pre.querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          const originalHtml = button.innerHTML;
+          button.innerHTML = 'Copied!';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerHTML = originalHtml;
+            button.classList.remove('copied');
+          }, 2000);
+        });
+      });
+
+      // Wrap pre in relative container if needed, or just append button
+      // Since pre has overflow, we might need a wrapper or absolute positioning
+      // Let's try appending to pre and using sticky or absolute
+      pre.style.position = 'relative';
+      pre.appendChild(button);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Production
+dist/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment keys
+.env
+.env.local
+
+# Vercel
+.vercel/
