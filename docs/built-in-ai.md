@@ -15,8 +15,16 @@ Chrome provides **Specialist APIs** for specific tasks, alongside the general **
 ### 1. The Prompt API (`window.LanguageModel`)
 The general-purpose interface for chatbots and complex reasoning.
 ```javascript
-const session = await window.LanguageModel.create({ systemPrompt: "You are a helpful assistant." });
-const stream = session.promptStreaming("Explain quantum physics.");
+const available = await LanguageModel.availability();
+if (available !== 'unavailable') {
+  const session = await LanguageModel.create();
+
+  // Prompt the model and stream the result:
+  const stream = session.promptStreaming('Write me an extra-long poem!');
+  for await (const chunk of stream) {
+    console.log(chunk);
+  }
+}
 ```
 
 ### 2. The Writer / Rewriter APIs (`window.Writer`, `window.Rewriter`)
