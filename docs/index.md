@@ -30,9 +30,6 @@ Get your hands dirty! We will build a production-ready Chrome Extension featurin
 ### 4. [Cross-Browser Support (Polyfill)](polyfill.md)
 Learn how to bring these APIs to Firefox, Safari, and other browsers using the **Language Model Polyfill**.
 
-### 5. [Hybrid Mode (Advanced)](hybrid-mode.md)
-A brief look at how to scale up to the cloud using Firebase AI Logic when the local model isn't enough.
-
 ---
 
 **Ready to start?**

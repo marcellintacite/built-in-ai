@@ -1,81 +1,69 @@
-# Chrome Built-in AI Workshop 🚀
+# Chrome Built-in AI Workshop
 
-Welcome to the **Chrome Built-in AI Workshop**! In this session, you will learn how to build "AI Everywhere" experiences using Gemini Nano directly in the browser—local, private, and free.
+A collection of projects demonstrating Chrome's Built-in AI APIs including Prompt API, Writer API, Rewriter API, Translator API, and Language Detection API.
 
-## 📂 Project Structure
+## Projects
 
-- **`docs/`**: The source for the workshop documentation site.
-- **`workshop-code/`**:
-    - **`chrome-extension/`**: The source code for the "AI Power Tools" extension we will build.
-    - **`web-app/`**: A sample e-commerce web app to test your extension on.
-- **`scripts/`**: Build scripts for generating the documentation site.
+### 🤖 Andika AI - Chrome Extension
+**Location**: `workshop-code/chrome-extension/`
 
----
+A modern Chrome extension providing on-device AI assistance with:
+- **Multimodal Chat**: Send text and images to AI with markdown rendering
+- **Content Script**: Floating AI button on text inputs for rewriting
+- **Settings**: Customizable tone, format, length, and shared context
+- **Modern UI**: Glassmorphism design with smooth animations
 
-## 🛠️ Quick Start (Documentation Site)
+**Features**:
+- Image analysis in chat
+- Streaming AI responses
+- LinkedIn contenteditable support
+- Keyboard shortcuts (Enter to send, Shift+Enter for new line)
 
-1.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
+**[View Extension README →](workshop-code/chrome-extension/README.md)**
 
-2.  **Run Locally**:
-    ```bash
-    npm start
-    ```
-    Visit `http://localhost:3000` to see the workshop guide.
+### 📚 Documentation
+**Location**: `docs/`
 
-3.  **Build Static Site**:
-    ```bash
-    npm run build
-    ```
-    The output will be in the `dist/` folder.
+Comprehensive guides and examples for Chrome's Built-in AI APIs:
+- Prompt API documentation
+- Writer API examples
+- Translator API usage
+- Language Detection samples
 
----
+## Getting Started
 
-## 🧩 Installing the Extension
+### Chrome Extension
+```bash
+cd workshop-code/chrome-extension
+# Load unpacked extension in Chrome
+```
 
-To test the "AI Power Tools" extension:
+### Requirements
+- Chrome 127+ (for Prompt API)
+- Built-in AI enabled in `chrome://flags`
 
-1.  Open Chrome and navigate to `chrome://extensions`.
-2.  Enable **Developer Mode** (top right toggle).
-3.  Click **Load unpacked**.
-4.  Select the `workshop-code/chrome-extension` folder from this repository.
-5.  Pin the extension to your toolbar!
+## Project Structure
 
----
+```
+workshop/
+├── workshop-code/
+│   └── chrome-extension/     # Andika AI Extension
+│       ├── manifest.json
+│       ├── background.js
+│       ├── sidepanel.html/css/js
+│       ├── content.js/css
+│       └── lib/
+├── docs/                     # API Documentation
+└── README.md                 # This file
+```
 
-## 🛍️ Running the Sample Web App
+## Technologies
 
-We have provided a sample "Global Gadgets" e-commerce site to test your AI tools (rewriting reviews, translating descriptions).
+- Chrome Built-in AI APIs (Prompt, Writer, Translator)
+- Vanilla JavaScript
+- Chrome Extension Manifest V3
+- CSS Glassmorphism
 
-1.  Navigate to the web app folder:
-    ```bash
-    cd workshop-code/web-app
-    ```
-2.  Open `index.html` in your browser.
-    -   *Or simply drag and drop the file into a Chrome tab.*
+## License
 
----
-
-## 🚀 Deployment (Vercel)
-
-This repository is configured to deploy the **Workshop Documentation Site**.
-
-1.  **Build Command**: `npm run build`
-2.  **Output Directory**: `dist`
-3.  **Root Directory**: `.` (default)
-
-The documentation site includes all the guides and code snippets needed for attendees to follow along.
-
----
-
-## 📜 Workshop Agenda
-
-1.  **Introduction**: Generally understanding the "AI Everywhere" vision.
-2.  **Environment Setup**: Configuring Chrome Flags and downloading Gemini Nano.
-3.  **Core Concepts**: Learning about the Prompt API, Rewriter API, and Translator API.
-4.  **Build Guide**: Creating the "AI Power Tools" extension step-by-step.
-5.  **Hybrid Mode**: Using Firebase AI Logic for cloud fallbacks.
-
-Happy Coding! ✨
+MIT

@@ -1,0 +1,258 @@
+:root {
+  --primary: #d4a574;
+  --primary-hover: #c89860;
+  --text-main: #3d2817;
+  --text-muted: #6b5744;
+  --bg-main: #faf7f2;
+  --white: #ffffff;
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --font-sans:
+    "Plus Jakarta Sans", -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+    oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Effects */
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, #f5ebe0, transparent),
+    radial-gradient(circle at bottom left, #faf7f2, transparent);
+}
+
+.glow-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.glow-1 {
+  width: 40vw;
+  height: 40vw;
+  background: #e6c9a8;
+  top: -10%;
+  right: -10%;
+  animation: float-1 20s infinite alternate ease-in-out;
+}
+
+.glow-2 {
+  width: 35vw;
+  height: 35vw;
+  background: #f5ebe0;
+  bottom: -10%;
+  left: -5%;
+  animation: float-2 25s infinite alternate ease-in-out;
+}
+
+.glow-3 {
+  width: 25vw;
+  height: 25vw;
+  background: #f0ddc8;
+  top: 40%;
+  left: 30%;
+  animation: float-3 30s infinite alternate ease-in-out;
+}
+
+@keyframes float-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-10%, 15%);
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(15%, -10%);
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-20%, -20%);
+  }
+}
+
+/* Content Layout */
+.content-wrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  text-align: center;
+  z-index: 10;
+  animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.welcome-logo:hover {
+  transform: scale(1.05);
+}
+
+.ai-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  background: linear-gradient(to bottom right, #1e293b, #475569);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+/* Setup Controls */
+.action-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-modern {
+  background-color: var(--text-main);
+  color: var(--white);
+  border: none;
+  padding: 18px 48px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.15);
+  background-color: #000;
+}
+
+.btn-modern:active {
+  transform: translateY(0);
+}
+
+.btn-modern:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status-modern {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.progress-modern-container {
+  width: 100%;
+  max-width: 400px;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 100px;
+  overflow: hidden;
+  display: none;
+  margin-top: 10px;
+}
+
+.progress-modern-bar {
+  height: 100%;
+  background-color: var(--text-main);
+  width: 0%;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.attribution {
+  position: fixed;
+  bottom: 24px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  z-index: 10;
+  animation: fade-in 1.5s ease-out;
+}
+
+.attribution a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.attribution a:hover {
+  color: var(--primary);
+}

@@ -1,0 +1,127 @@
+/* Andika AI - Content Script Styles */
+
+/* Icon-only button */
+.andika-ai-btn {
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Compact size */
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  /* Modern gradient */
+  background: linear-gradient(135deg, #d4a574 0%, #c89860 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  pointer-events: none;
+}
+
+.andika-ai-btn.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.andika-ai-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(212, 165, 116, 0.5);
+  background: linear-gradient(135deg, #c89860 0%, #b8864f 100%);
+}
+
+.andika-ai-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.andika-ai-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Loading state */
+.andika-ai-btn.thinking {
+  cursor: wait;
+  background: linear-gradient(270deg, #e6c9a8, #d4a574, #c89860, #b8864f);
+  background-size: 300% 300%;
+  animation: gradient-move 3s ease infinite;
+}
+
+.andika-ai-btn.thinking .spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Tooltip */
+.andika-ai-tooltip {
+  position: absolute;
+  z-index: 10001;
+
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  border-radius: 6px;
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translate(-50%, 0) scale(0.9);
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.andika-ai-tooltip.visible {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.andika-ai-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(0, 0, 0, 0.9);
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

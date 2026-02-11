@@ -35,6 +35,6 @@ In this workshop, you will build **"AI Power Tools"**, a Chrome Extension that b
 2.  **Translate**: Instantly translate selected text.
 3.  **Detect Language**: Identify languages on the fly.
 
-Everything will happen locally, leveraging the specialized tasks of the Prompt API and Explorer APIs. We will also briefly touch on **Hybrid solutions** using Firebase AI Logic for cases where you might need cloud power, and **Polyfills** to support other browsers.
+Everything will happen locally, leveraging the specialized tasks of the Prompt API and Explorer APIs. We will also briefly touch on **Polyfills** to support other browsers.
 
 Let's make AI accessible, private, and ubiquitous. Let's bring the magic to the user.

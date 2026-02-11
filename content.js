@@ -35,11 +35,6 @@ const steps = [
       <p>
         The Prompt API is a flexible API that allows you to send natural language prompts to the local model and receive responses. It supports both one-shot (single response) and streaming (token by token) interactions.
       </p>
-
-      <h2>Hybrid Approach</h2>
-      <p>
-        While local models are powerful, they have limitations. For complex tasks requiring larger context or higher reasoning capabilities, a hybrid approach is recommended. You can use <strong>Firebase AI Logic</strong> to seamlessly switch between the local Gemini Nano and cloud-based Gemini models based on the task complexity and device capabilities.
-      </p>
     `
   },
   {
@@ -363,42 +358,9 @@ async function createSession() {
   },
   {
     id: 6,
-    title: 'Hybrid Mode',
-    content: `
-      <h1>7. Hybrid Mode</h1>
-      <p>
-        Sometimes the local model isn't enough. You might need a larger model for complex reasoning or knowledge about recent events. This is where a hybrid approach works best.
-      </p>
-
-      <h2>Firebase AI Logic</h2>
-      <p>
-        Firebase AI Logic (Genkit) allows you to define flows that can run on the cloud. You can call these flows from your extension.
-      </p>
-
-      <h2>When to Switch?</h2>
-      <ul>
-        <li><strong>Local (Gemini Nano):</strong> Privacy-sensitive data, offline use, simple tasks (summarize, rephrase), low latency requirements.</li>
-        <li><strong>Cloud (Gemini Pro/Flash):</strong> Complex reasoning, large context window, multimodal input (images/video), up-to-date knowledge.</li>
-      </ul>
-
-      <h2>Example Logic</h2>
-      <pre><button class="copy-button">Copy</button><code class="language-javascript">async function smartSummarize(text) {
-  try {
-    // Try local first for speed
-    return await summarizeText(text);
-  } catch (e) {
-    // Fallback to cloud if local fails or isn't available
-    console.log("Local model failed, trying cloud...");
-    return await callCloudFunction("summarize", { text });
-  }
-}</code></pre>
-    `
-  },
-  {
-    id: 7,
     title: 'Testing',
     content: `
-      <h1>8. Testing</h1>
+      <h1>7. Testing</h1>
       <p>
         Time to test your extension!
       </p>
@@ -426,10 +388,10 @@ async function createSession() {
     `
   },
   {
-    id: 8,
+    id: 7,
     title: 'Wrap Up',
     content: `
-      <h1>9. Wrap Up</h1>
+      <h1>8. Wrap Up</h1>
       <p>
         Congratulations! You've built a Chrome Extension that uses the built-in Gemini Nano model.
       </p>

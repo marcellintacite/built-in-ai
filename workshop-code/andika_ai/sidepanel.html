@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andika AI</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <!-- Background Effects -->
+    <div class="background-glow">
+      <div class="glow-sphere glow-1"></div>
+      <div class="glow-sphere glow-2"></div>
+    </div>
+
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <img src="icons/icon128.png" alt="Andika AI" class="header-logo" />
+          <h1>Andika AI</h1>
+        </div>
+        <nav class="tabs">
+          <button class="tab-btn active" data-tab="chat">Chat</button>
+          <button class="tab-btn" data-tab="settings">Settings</button>
+        </nav>
+      </header>
+
+      <main id="chat-tab" class="tab-content active">
+        <div id="chat-history" class="chat-history">
+          <div class="message system">
+            <p>
+              Hello! I'm your on-device AI assistant. How can I help you today?
+            </p>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <div class="input-attachments" id="input-attachments"></div>
+          <div class="input-controls">
+            <button
+              id="attach-image-btn"
+              class="attach-btn"
+              title="Attach image"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+            </button>
+            <input
+              type="file"
+              id="image-input"
+              accept="image/*"
+              style="display: none"
+            />
+            <textarea
+              id="prompt-input"
+              placeholder="Type a message..."
+            ></textarea>
+            <button id="send-btn" title="Send message">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <main id="tools-tab" class="tab-content">
+        <div class="tool-section">
+          <h2>Translation & Detection</h2>
+          <div id="tool-output" class="tool-output">
+            <p class="placeholder">
+              Select text on a web page and use the context menu to Translate or
+              Detect Language.
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <main id="settings-tab" class="tab-content">
+        <div class="settings-section">
+          <h2>Writer Settings</h2>
+          <p class="settings-desc">
+            Configure default behavior for AI writing assistance
+          </p>
+
+          <form id="settings-form" class="settings-form">
+            <div class="form-group">
+              <label for="tone-select">Tone</label>
+              <select id="tone-select" name="tone">
+                <option value="casual">Casual</option>
+                <option value="formal">Formal</option>
+                <option value="neutral">Neutral</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="format-select">Format</label>
+              <select id="format-select" name="format">
+                <option value="plain-text">Plain Text</option>
+                <option value="markdown">Markdown</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="length-select">Length</label>
+              <select id="length-select" name="length">
+                <option value="short">Short</option>
+                <option value="medium">Medium</option>
+                <option value="long">Long</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="output-lang-select">Output Language</label>
+              <select id="output-lang-select" name="outputLanguage">
+                <option value="auto">Auto-detect from input</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="ja">Japanese</option>
+                <option value="zh">Chinese</option>
+              </select>
+              <small class="form-hint">Language for AI-generated text</small>
+            </div>
+
+            <div class="form-group">
+              <label for="context-input">Shared Context (Optional)</label>
+              <textarea
+                id="context-input"
+                name="sharedContext"
+                rows="3"
+                placeholder="Provide context for the AI writer..."
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Save Settings</button>
+              <button type="button" id="reset-btn" class="btn-secondary">
+                Reset to Defaults
+              </button>
+            </div>
+          </form>
+
+          <div id="settings-status" class="settings-status"></div>
+        </div>
+      </main>
+    </div>
+    <script src="lib/utils.js"></script>
+    <script src="lib/settings.js"></script>
+    <script src="lib/ai-manager.js"></script>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
