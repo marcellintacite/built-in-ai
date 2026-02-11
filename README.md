@@ -5,26 +5,33 @@ A collection of projects demonstrating Chrome's Built-in AI APIs including Promp
 ## Projects
 
 ### 🤖 Andika AI - Chrome Extension
-**Location**: `workshop-code/chrome-extension/`
 
-A modern Chrome extension providing on-device AI assistance with:
+**Location**: `workshop-code/andika_ai/`
+
+A privacy-focused Chrome extension providing on-device AI assistance with:
+
 - **Multimodal Chat**: Send text and images to AI with markdown rendering
-- **Content Script**: Floating AI button on text inputs for rewriting
+- **AI Writing Button**: Floating button on text inputs for instant rewriting
 - **Settings**: Customizable tone, format, length, and shared context
-- **Modern UI**: Glassmorphism design with smooth animations
+- **Modern UI**: Warm golden design with smooth animations
+- **100% Private**: All processing on-device with Gemini Nano
 
 **Features**:
+
 - Image analysis in chat
 - Streaming AI responses
-- LinkedIn contenteditable support
+- Works on all text inputs (Gmail, LinkedIn, Twitter, etc.)
 - Keyboard shortcuts (Enter to send, Shift+Enter for new line)
+- No data sent to servers
 
-**[View Extension README →](workshop-code/chrome-extension/README.md)**
+**[View Extension README →](workshop-code/andika_ai/README.md)**
 
 ### 📚 Documentation
+
 **Location**: `docs/`
 
 Comprehensive guides and examples for Chrome's Built-in AI APIs:
+
 - Prompt API documentation
 - Writer API examples
 - Translator API usage
@@ -33,12 +40,14 @@ Comprehensive guides and examples for Chrome's Built-in AI APIs:
 ## Getting Started
 
 ### Chrome Extension
+
 ```bash
 cd workshop-code/chrome-extension
 # Load unpacked extension in Chrome
 ```
 
 ### Requirements
+
 - Chrome 127+ (for Prompt API)
 - Built-in AI enabled in `chrome://flags`
 
@@ -47,7 +56,7 @@ cd workshop-code/chrome-extension
 ```
 workshop/
 ├── workshop-code/
-│   └── chrome-extension/     # Andika AI Extension
+│   └── andika_ai/            # Andika AI Extension
 │       ├── manifest.json
 │       ├── background.js
 │       ├── sidepanel.html/css/js

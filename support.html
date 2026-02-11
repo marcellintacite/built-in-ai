@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andika AI - Support</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #d4a574;
+        --primary-hover: #c89860;
+        --text-main: #3d2817;
+        --text-muted: #6b5744;
+        --bg-main: #faf7f2;
+        --white: #ffffff;
+        --border: #e8dfd4;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Plus Jakarta Sans",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        background: linear-gradient(135deg, #faf7f2 0%, #f5ebe0 100%);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-hover) 100%
+        );
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 36px;
+        font-weight: 700;
+        box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-hover) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+      }
+
+      .section {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      h2 {
+        color: var(--text-main);
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid var(--border);
+      }
+
+      h3 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+
+      .faq-item {
+        margin-bottom: 25px;
+      }
+
+      .faq-question {
+        font-weight: 600;
+        color: var(--text-main);
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+      }
+
+      .faq-answer {
+        color: var(--text-muted);
+        padding-left: 20px;
+      }
+
+      .contact-info {
+        background: var(--bg-main);
+        padding: 25px;
+        border-radius: 12px;
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        gap: 12px;
+      }
+
+      .contact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 600;
+      }
+
+      a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: var(--primary-hover);
+        text-decoration: underline;
+      }
+
+      .steps {
+        counter-reset: step-counter;
+        list-style: none;
+      }
+
+      .steps li {
+        counter-increment: step-counter;
+        margin-bottom: 20px;
+        padding-left: 40px;
+        position: relative;
+      }
+
+      .steps li::before {
+        content: counter(step-counter);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 28px;
+        height: 28px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      code {
+        background: var(--bg-main);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-family: "Monaco", "Courier New", monospace;
+        font-size: 0.9em;
+        color: var(--primary);
+      }
+
+      .note {
+        background: #fff9f0;
+        border-left: 4px solid var(--primary);
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 60px;
+        padding-top: 30px;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">A</div>
+        <h1>Andika AI Support</h1>
+        <p class="subtitle">Your Private AI Writing Companion</p>
+      </header>
+
+      <div class="section">
+        <h2>Getting Started</h2>
+        <ol class="steps">
+          <li>Install the Andika AI extension from the Chrome Web Store</li>
+          <li>Ensure you have Chrome version 127 or higher</li>
+          <li>Enable Chrome's Built-in AI in <code>chrome://flags</code></li>
+          <li>Navigate to any webpage with text inputs</li>
+          <li>
+            Focus a text field and click the golden AI button that appears
+          </li>
+        </ol>
+
+        <div class="note">
+          <strong>Note:</strong> Andika AI requires Chrome's built-in Gemini
+          Nano model. Make sure "Prompt API for Gemini Nano" is enabled in
+          chrome://flags.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Is my data private?</div>
+          <div class="faq-answer">
+            Yes! All AI processing happens locally on your device using Chrome's
+            built-in Gemini Nano. Your text never leaves your computer. No data
+            is sent to external servers, and we don't collect any user
+            information.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Why isn't the AI button appearing?</div>
+          <div class="faq-answer">
+            Make sure you've enabled Chrome's Built-in AI in chrome://flags.
+            Search for "Prompt API for Gemini Nano" and set it to "Enabled".
+            Then restart Chrome and reload the extension.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Does this work on all websites?</div>
+          <div class="faq-answer">
+            Yes! Andika AI works on any website with text input fields,
+            including Gmail, LinkedIn, Twitter, forms, and more. The AI button
+            appears automatically when you focus a text field.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Is Andika AI free?</div>
+          <div class="faq-answer">
+            Yes, Andika AI is completely free with no subscriptions, no hidden
+            costs, and no premium tiers. All features are available to everyone.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What can I do with the sidepanel?</div>
+          <div class="faq-answer">
+            The sidepanel provides an advanced chat interface where you can have
+            extended conversations with AI, send images for analysis, and
+            customize your writing preferences (tone, format, length).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Q: How do I change the AI's writing style?
+          </div>
+          <div class="faq-answer">
+            Click the extension icon to open the sidepanel, then go to the
+            Settings tab. You can customize the tone (casual/formal), format
+            (plain text/markdown), and length (short/medium/long).
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Troubleshooting</h2>
+
+        <h3>Extension Not Working</h3>
+        <ol class="steps">
+          <li>Check that you're using Chrome 127 or higher</li>
+          <li>Enable "Prompt API for Gemini Nano" in chrome://flags</li>
+          <li>Restart Chrome completely</li>
+          <li>Reload the extension from chrome://extensions</li>
+        </ol>
+
+        <h3>AI Button Not Appearing</h3>
+        <ol class="steps">
+          <li>Make sure the extension is enabled in chrome://extensions</li>
+          <li>Try refreshing the webpage</li>
+          <li>Check browser console for any errors (F12)</li>
+          <li>
+            Verify you're not on a restricted page (chrome://,
+            chrome-extension://)
+          </li>
+        </ol>
+
+        <h3>Slow Performance</h3>
+        <p>
+          All AI processing happens on your device. Performance depends on your
+          computer's capabilities. For best results, ensure you have sufficient
+          RAM and CPU resources available.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Contact & Support</h2>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="icon">📧</div>
+            <div>
+              <strong>Email Support:</strong><br />
+              <a href="mailto:support@example.com">support@example.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">🐛</div>
+            <div>
+              <strong>Report Issues:</strong><br />
+              <a
+                href="https://github.com/marcellintacite/built-in-ai/issues"
+                target="_blank"
+                >GitHub Issues</a
+              >
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">📖</div>
+            <div>
+              <strong>Documentation:</strong><br />
+              <a
+                href="https://github.com/marcellintacite/built-in-ai"
+                target="_blank"
+                >GitHub Repository</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; 2026 Andika AI. All rights reserved.</p>
+        <p>Built with ❤️ using Chrome's Built-in AI</p>
+      </footer>
+    </div>
+  </body>
+</html>
